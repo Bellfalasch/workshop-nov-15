@@ -4,9 +4,8 @@ var libs = {
 	thymeleaf: require('/lib/xp/thymeleaf'),
 	util: require('/lib/enonic/util/util')
 };
-
-// SETTINGS
 var view = resolve('user-import.html');
+
 
 exports.get = function(req) {
 
