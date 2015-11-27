@@ -26,10 +26,12 @@ exports.get = function(req) {
 	}
 */
 
+	var userStore = 'system';
+
 	// Get all groups
 	var groups = libs.auth.findPrincipals({
 			type: 'group',
-			userStore: 'system',
+			userStore: userStore,
 			start: 0,
 			count: 100
 		});
@@ -47,7 +49,7 @@ exports.get = function(req) {
 	// Get all users
 	var users = libs.auth.findPrincipals({
 			type: 'user',
-			userStore: 'system',
+			userStore: userStore,
 			start: 0,
 			count: 100
 		});
