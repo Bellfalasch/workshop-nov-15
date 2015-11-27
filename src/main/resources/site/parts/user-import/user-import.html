@@ -1,8 +1,32 @@
 <div class="p_user-import">
 
-	<h2>Groups</h2>
-	<ul>
-		<li data-th-each="${group : groups}" data-th-text="${group.displayName}"></li>
+	<h2>Import users</h2>
+
+	<h3>Groups</h3>
+	<ul data-th-if="${groups}">
+		<li data-th-each="group : ${groups.hits}">
+			<span data-th-text="${group.displayName}" data-th-remove="tag"></span>
+		</li>
 	</ul>
+
+	<h3>Users</h3>
+	<ul data-th-if="${users}">
+		<li data-th-each="user : ${users.hits}">
+			<span data-th-text="${user.displayName}" data-th-remove="tag"></span>
+		</li>
+	</ul>
+
+	<h3>Todo ...</h3>
+	<ol>
+		<li style="text-decoration: line-through;">List all groups</li>
+		<li>Select group</li>
+		<li>Create group?</li>
+		<li>Create user in group</li>
+		<li>Create multiple users in group</li>
+		<li>Upload txt-file</li>
+		<li>Parse file, line per line</li>
+		<li>Create user object from data</li>
+		<li>Add user to database</li>
+	</ol>
 
 </div>
