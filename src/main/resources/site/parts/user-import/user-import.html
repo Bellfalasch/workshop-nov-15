@@ -1,9 +1,8 @@
 <div class="p_user-import">
 
-	<p>This is Part</p>
-
+	<h2>Groups</h2>
 	<ul>
-		<li data-th-each="${user : users}"></li>
+		<li data-th-each="${group : groups}" data-th-text="${group.displayName}"></li>
 	</ul>
 
 </div>

@@ -14,19 +14,21 @@ exports.get = function(req) {
 	var component = libs.portal.getComponent();
 	var content = libs.portal.getContent();
 
-	var users = libs.auth.authLib.findPrincipals({
+	var groups = libs.auth.findPrincipals({
 			type: 'group',
 			userStore: 'user-store',
 			start: 0,
 			count: 100
 		});
 
-	log(users);
+	if ( groups ) {
+		log(groups);
+	}
 
 	var model = {
 		'config': component.config,
 		'content': content,
-		'users': users
+		'groups': groups
 	};
 
     return {
